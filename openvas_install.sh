@@ -467,20 +467,4 @@ cp -v $BUILD_DIR/gsad.service /etc/systemd/system/
 
 systemctl daemon-reload
 
-# Download Openvas feeds.
-echo "Download Openvas feeds. This is going to take time do not interrupt this process."
-/usr/local/bin/greenbone-feed-sync
-
-# Enable the services
-systemctl enable notus-scanner
-systemctl enable ospd-openvas
-systemctl enable gvmd
-systemctl enable gsad
-
-# Start the services
-systemctl start notus-scanner
-systemctl start ospd-openvas
-systemctl start gvmd
-systemctl start gsad
-
-echo "OpenVAS installation has been completed."
+echo "OpenVAS installation has not been completed. Run /usr/local/bin/greenbone-feed-sync locally for completion and Enable and Start the services"
